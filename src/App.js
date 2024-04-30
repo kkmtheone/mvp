@@ -1,13 +1,18 @@
-import React from 'react';
-import Header from './components/Header';
 
-function App() {
+
+import React from 'react';
+import ImageForm from './components/ImageForm';
+import ImageList from './components/ImageList';
+import './App.css';
+
+const App = () => {
   return (
-    <div>
-      <Header />
-      {/* Add other components or content here */}
+    <div className="app">
+      <ImageForm />
+      <ImageList />
     </div>
   );
-}
+};
 
 export default App;
+
