@@ -11,9 +11,9 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <NavBar />
+    <div>
+      <NavBar />
+      <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
@@ -21,12 +21,13 @@ const App = () => {
           <Route path="/updates" element={<UpdatesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 };
 
 export default App;
+
 
 
 
