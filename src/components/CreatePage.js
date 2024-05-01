@@ -24,8 +24,8 @@ const CreatePage = () => {
 
     try {
       setUploading(true);
-      // Your API endpoint for image upload
-      const response = await axios.post('YOUR_API_ENDPOINT', formData, {
+      // the server endpoint for image upload
+      const response = await axios.post('http://localhost:5000/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -59,4 +59,5 @@ const CreatePage = () => {
 };
 
 export default CreatePage;
+
 
