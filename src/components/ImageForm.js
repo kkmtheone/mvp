@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const ImageForm = () => {
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState('');
+  const history = useHistory();
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -28,6 +30,7 @@ const ImageForm = () => {
         },
       });
       alert('Image uploaded successfully!');
+      history.push('/');
     } catch (error) {
       console.error('Error uploading image:', error);
       alert('Failed to upload image.');
@@ -36,7 +39,7 @@ const ImageForm = () => {
 
   return (
     <div>
-      <h2>Upload Image</h2>
+      <h2>Create / Add Page</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <input type="file" onChange={handleImageChange} />
@@ -55,3 +58,4 @@ const ImageForm = () => {
 };
 
 export default ImageForm;
+
