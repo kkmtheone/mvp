@@ -1,6 +1,8 @@
 
+// src/App.js
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import SearchPage from './components/SearchPage';
@@ -11,23 +13,26 @@ import './App.css';
 
 const App = () => {
   return (
-    <div>
-      <NavBar />
+    <Router>
       <div>
-        <Router>
+        <NavBar />
+        <div>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/create" element={<CreatePage />} />
-            <Route path="/updates" element={<UpdatesPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/" element={<Outlet />}>
+              <Route index element={<HomePage />} />
+              <Route path="search" element={<SearchPage />} />
+              <Route path="create" element={<CreatePage />} />
+              <Route path="updates" element={<UpdatesPage />} />
+              <Route path="profile" element={<ProfilePage />} />
+            </Route>
           </Routes>
-        </Router>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 };
 
 export default App;
+
 
 
