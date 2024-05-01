@@ -1,0 +1,27 @@
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  
+  .tabs button.active {
+    border-bottom: 2px solid #333;
+  }
+  
+  .updates-section, .messages-section {
+    display: none;
+  }
+  
+  .updates-section.show, .messages-section.show {
+    display: block;
+  }
+  
