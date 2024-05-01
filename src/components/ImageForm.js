@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ImageForm = () => {
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -30,7 +30,7 @@ const ImageForm = () => {
         },
       });
       alert('Image uploaded successfully!');
-      history.push('/');
+      navigate('/');
     } catch (error) {
       console.error('Error uploading image:', error);
       alert('Failed to upload image.');
@@ -58,4 +58,3 @@ const ImageForm = () => {
 };
 
 export default ImageForm;
-
