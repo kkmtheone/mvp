@@ -25,7 +25,8 @@ const CreatePage = () => {
     try {
       setUploading(true);
       // the server endpoint for image upload
-      const response = await axios.post('http://localhost:5000/upload', formData, {
+      const PORT = process.env.REACT_APP_SERVER_PORT || 3001;
+      const response = await axios.post(`http://localhost:${PORT}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -59,5 +60,6 @@ const CreatePage = () => {
 };
 
 export default CreatePage;
+
 
 
