@@ -13,21 +13,21 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/create" element={<CreatePage />} />
-          <Route path="/updates" element={<UpdatesPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-        </Routes>
-      </Router>
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/create" element={<CreatePage />} />
+            <Route path="/updates" element={<UpdatesPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 };
 
 export default App;
-
-
 
 
