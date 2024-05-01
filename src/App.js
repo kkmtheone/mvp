@@ -16,17 +16,12 @@ const App = () => {
         <NavBar />
         <div>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/create" element={<CreatePage />} />
-            <Route path="/updates" element={<UpdatesPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="*" element={<Outlet />}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/create" element={<CreatePage />} />
-              <Route path="/updates" element={<UpdatesPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/" element={<Outlet />}>
+              <Route index element={<HomePage />} />
+              <Route path="search" element={<SearchPage />} />
+              <Route path="create" element={<CreatePage />} />
+              <Route path="updates" element={<UpdatesPage />} />
+              <Route path="profile" element={<ProfilePage />} />
             </Route>
           </Routes>
         </div>
